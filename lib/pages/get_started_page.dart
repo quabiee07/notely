@@ -36,7 +36,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
         ),
         body: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Expanded(
