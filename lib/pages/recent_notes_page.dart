@@ -108,6 +108,7 @@ class _RecentNotesPageState extends State<RecentNotesPage> {
       ),
       floatingActionButton: FloatingActionButton.extended(
           backgroundColor: primaryColor,
+          icon: Icon(Icons.add_task_rounded),
           label: Text(
             'Add a Note',
             style: getRegularStyle(
