@@ -32,6 +32,8 @@ const String allNotesDesc =
     'Add a note about anything (your thoughts on climate change, or your history essay) and share it witht the world.';
 const String createNote = 'Create A Note';
 const String importNotes = 'Import Notes';
+const String recentNotes = 'Recent Notes';
+const String editNotes = 'Edit Note';
 
 class AppDimens {
   static const double defaultPadding = 16.0;

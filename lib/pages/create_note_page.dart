@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:notely/pages/edit_note.dart';
+import 'package:notely/pages/profile_page.dart';
 import 'package:notely/utils/color.dart';
 
 import '../utils/constants.dart';
@@ -29,6 +31,8 @@ class CreateNotePage extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: ((context) => const ProfilePage())));
                           },
                           child: Image.asset('assets/align-left-1.png'),
                         ),
@@ -43,8 +47,7 @@ class CreateNotePage extends StatelessWidget {
                         ),
                         const Spacer(),
                         GestureDetector(
-                          onTap: () {
-                          },
+                          onTap: () {},
                           child: Image.asset('assets/search.png'),
                         )
                       ],
@@ -65,7 +68,7 @@ class CreateNotePage extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Text(
@@ -87,13 +90,13 @@ class CreateNotePage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (builder) {
-                              return const CreateNotePage();
+                              return EditNotePage();
                             },
                           ),
                         );
                       },
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Center(
                       child: Text(
                         importNotes,

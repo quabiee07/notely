@@ -21,60 +21,67 @@ class _GetStartedPageState extends State<GetStartedPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: secondaryColor,
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: secondaryColor,
-          centerTitle: true,
-          title: Text(
-            appName,
-            style: getRegularStyle(
-              color: textColor,
-              fontSize: 16,
-              fontWeight: FontWeight.w900,
-            ),
-          ),
-        ),
-        body: Column(
-          children: [
-            const SizedBox(
-              height: 40,
-            ),
-            Expanded(
-              child: PageView.builder(
-                controller: _pageController,
-                itemCount: onboardingObject.length,
-                itemBuilder: (context, index) {
-                  return onboardingObject[index];
-                },
-                onPageChanged: (index) {
-                  setState(() {
-                    _currentIndex = index;
-                  });
-                },
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 40,
               ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Center(
-              child: DotsIndicator(
-                controller: _pageController,
-                itemCount: onboardingObject.length,
-                onPageSelected: (page) {
-                  _pageController.animateToPage(
-                    page,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.ease,
-                  );
-                },
+              Expanded(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        const Spacer(),
+                        Text(
+                          allNotes,
+                          style: getRegularStyle(
+                            color: textColor,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        const Spacer(),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              child: CustomButton(
+              Expanded(
+                child: PageView.builder(
+                  controller: _pageController,
+                  itemCount: onboardingObject.length,
+                  itemBuilder: (context, index) {
+                    return onboardingObject[index];
+                  },
+                  onPageChanged: (index) {
+                    setState(() {
+                      _currentIndex = index;
+                    });
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Center(
+                child: DotsIndicator(
+                  controller: _pageController,
+                  itemCount: onboardingObject.length,
+                  onPageSelected: (page) {
+                    _pageController.animateToPage(
+                      page,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.ease,
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              CustomButton(
                 text: getStarted.toUpperCase(),
                 pressed: () {
                   Navigator.push(
@@ -83,10 +90,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
                           builder: (context) => const CreateAccountPage()));
                 },
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
+              Text(
                 haveAnAcc,
                 style: getRegularStyle(
                   fontSize: 16,
@@ -94,11 +98,11 @@ class _GetStartedPageState extends State<GetStartedPage> {
                   fontWeight: FontWeightManager.semiBold,
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            )
-          ],
+              const SizedBox(
+                height: 20,
+              )
+            ],
+          ),
         ));
   }
 

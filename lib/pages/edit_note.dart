@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:notely/pages/profile_page.dart';
+import 'package:notely/widgets/multiline_textfield.dart';
 
 import '../utils/color.dart';
 import '../utils/constants.dart';
 
-class RecentNotesPage extends StatefulWidget {
-  const RecentNotesPage({Key? key}) : super(key: key);
+class EditNotePage extends StatelessWidget {
+  EditNotePage({Key? key}) : super(key: key);
+  final _titleController = TextEditingController();
+  final _descController = TextEditingController();
 
-  @override
-  State<RecentNotesPage> createState() => _RecentNotesPageState();
-}
-
-class _RecentNotesPageState extends State<RecentNotesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,14 +30,13 @@ class _RecentNotesPageState extends State<RecentNotesPage> {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: ((context) => const ProfilePage())));
+                            Navigator.pop(context);
                           },
-                          child: Image.asset('assets/align-left-1.png'),
+                          child: Image.asset('assets/Arrow-left-1.png'),
                         ),
                         const Spacer(),
                         Text(
-                          recentNotes,
+                          editNotes,
                           style: getRegularStyle(
                             color: textColor,
                             fontSize: 14,
@@ -50,9 +46,23 @@ class _RecentNotesPageState extends State<RecentNotesPage> {
                         const Spacer(),
                         GestureDetector(
                           onTap: () {},
-                          child: Image.asset('assets/search.png'),
+                          child: Image.asset('assets/More-ver.png'),
                         )
                       ],
+                    ),
+                    const SizedBox(
+                      height: 28,
+                    ),
+                    TitleMultilineTextfield(
+                      hint: 'Add a title',
+                      controller: _titleController,
+                    ),
+                    const SizedBox(
+                      height: 7,
+                    ),
+                    DescMultilineTextfield(
+                      hint: 'Add some notes..',
+                      controller: _descController,
                     ),
                   ],
                 ),
