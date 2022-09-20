@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notely/pages/create_note_page.dart';
+import 'package:notely/pages/recent_notes_page.dart';
 import 'package:notely/widgets/checked_text.dart';
 import 'package:notely/widgets/sub_card.dart';
 
@@ -131,7 +132,7 @@ class _PremuimPageState extends State<PremuimPage> {
                           context,
                           MaterialPageRoute(
                             builder: (builder) {
-                              return const CreateNotePage();
+                              return const RecentNotesPage();
                             },
                           ),
                         );

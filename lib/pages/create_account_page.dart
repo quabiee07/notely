@@ -18,10 +18,10 @@ class CreateAccountPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: secondaryColor,
       body: Padding(
-        padding: const EdgeInsets.all(0.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-             const SizedBox(
+            const SizedBox(
               height: 45,
             ),
             Expanded(
@@ -29,8 +29,22 @@ class CreateAccountPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    Row(
+                      children: [
+                        const Spacer(),
+                        Text(
+                          appName,
+                          style: getRegularStyle(
+                            color: textColor,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        const Spacer(),
+                      ],
+                    ),
                     const SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
                     Text(
                       createFreeAcc,
@@ -77,7 +91,7 @@ class CreateAccountPage extends StatelessWidget {
                       hint: '#########',
                     ),
                     const SizedBox(
-                      height: 40,
+                      height: 80,
                     ),
                     CustomButton(
                       text: createAcc,
@@ -93,8 +107,8 @@ class CreateAccountPage extends StatelessWidget {
                       },
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
                       child: Text(
                         haveAnAcc,
                         style: getRegularStyle(

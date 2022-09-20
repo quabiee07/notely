@@ -32,7 +32,7 @@ class CreateNotePage extends StatelessWidget {
                         GestureDetector(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: ((context) => const ProfilePage())));
+                                builder: ((context) =>  ProfilePage())));
                           },
                           child: Image.asset('assets/align-left-1.png'),
                         ),

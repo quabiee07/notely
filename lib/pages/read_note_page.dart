@@ -1,13 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:notely/widgets/multiline_textfield.dart';
 
 import '../utils/color.dart';
 import '../utils/constants.dart';
 
-class EditNotePage extends StatelessWidget {
-  EditNotePage({Key? key}) : super(key: key);
-  final _titleController = TextEditingController();
-  final _descController = TextEditingController();
+class ReadNotePage extends StatelessWidget {
+  final QueryDocumentSnapshot doc;
+  const ReadNotePage({Key? key, required this.doc}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +21,7 @@ class EditNotePage extends StatelessWidget {
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
                       height: 30,
@@ -53,13 +53,24 @@ class EditNotePage extends StatelessWidget {
                     const SizedBox(
                       height: 28,
                     ),
-                    TitleMultilineTextfield(
-                      hint: 'Add a title',
-                      controller: _titleController,
+                    Text(
+                      doc['note_title'],
+                      style: getRegularStyle(
+                        color: textColor,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
-                    DescMultilineTextfield(
-                      hint: 'Add some notes..',
-                      controller: _descController,
+                    const SizedBox(
+                      height: 7,
+                    ),
+                    Text(
+                      doc['note_content'],
+                      style: getRegularStyle(
+                        color: textColor,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ],
                 ),

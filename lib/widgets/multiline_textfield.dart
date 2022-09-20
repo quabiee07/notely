@@ -17,6 +17,11 @@ class TitleMultilineTextfield extends StatelessWidget {
             borderRadius: BorderRadius.circular(12.0),
             color: Colors.transparent),
         child: TextField(
+          style: getRegularStyle(
+            color: textColor,
+            fontSize: 24,
+            fontWeight: FontWeight.w900,
+          ),
           controller: controller,
           maxLines: 10,
           minLines: 1,
@@ -48,6 +53,11 @@ class DescMultilineTextfield extends StatelessWidget {
             borderRadius: BorderRadius.circular(12.0),
             color: Colors.transparent),
         child: TextField(
+          style: getRegularStyle(
+            color: textColor,
+            fontSize: 18,
+            fontWeight: FontWeight.w700,
+          ),
           controller: controller,
           maxLines: 10,
           minLines: 1,

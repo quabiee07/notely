@@ -34,6 +34,12 @@ const String createNote = 'Create A Note';
 const String importNotes = 'Import Notes';
 const String recentNotes = 'Recent Notes';
 const String editNotes = 'Edit Note';
+const String buyPremium = 'Buy Premium';
+const String editProfile = 'Edit Profile';
+const String appTheme = 'App Theme';
+const String notification = 'Notifications';
+const String security = 'Security';
+const String logout = 'Logout';
 
 class AppDimens {
   static const double defaultPadding = 16.0;

@@ -28,25 +28,26 @@ class _GetStartedPageState extends State<GetStartedPage> {
               const SizedBox(
                 height: 40,
               ),
-              Expanded(
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        const Spacer(),
-                        Text(
-                          allNotes,
-                          style: getRegularStyle(
-                            color: textColor,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w900,
-                          ),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      const Spacer(),
+                      Text(
+                        appName,
+                        style: getRegularStyle(
+                          color: textColor,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w900,
                         ),
-                        const Spacer(),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                      const Spacer(),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 80,
+                  )
+                ],
               ),
               Expanded(
                 child: PageView.builder(
@@ -89,6 +90,9 @@ class _GetStartedPageState extends State<GetStartedPage> {
                       MaterialPageRoute(
                           builder: (context) => const CreateAccountPage()));
                 },
+              ),
+              const SizedBox(
+                height: 10,
               ),
               Text(
                 haveAnAcc,
