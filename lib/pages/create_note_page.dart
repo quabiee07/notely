@@ -90,7 +90,7 @@ class CreateNotePage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (builder) {
-                              return EditNotePage();
+                              return  EditNotePage();
                             },
                           ),
                         );

@@ -48,28 +48,28 @@ class DescMultilineTextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.only(left: 16, right: 16, top: 5, bottom: 5),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.0),
-            color: Colors.transparent),
-        child: TextField(
-          style: getRegularStyle(
+      padding: const EdgeInsets.only(left: 16, right: 16, top: 5, bottom: 5),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12.0), color: Colors.transparent),
+      child: TextField(
+        style: getRegularStyle(
+          color: textColor,
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+        ),
+        controller: controller,
+        maxLines: 10,
+        minLines: 1,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          hintText: hint,
+          hintStyle: getRegularStyle(
             color: textColor,
             fontSize: 18,
             fontWeight: FontWeight.w700,
           ),
-          controller: controller,
-          maxLines: 10,
-          minLines: 1,
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            hintText: hint,
-            hintStyle: getRegularStyle(
-              color: textColor,
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ));
+        ),
+      ),
+    );
   }
 }

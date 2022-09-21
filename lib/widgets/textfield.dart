@@ -27,7 +27,7 @@ class FilledTextField extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
         Container(

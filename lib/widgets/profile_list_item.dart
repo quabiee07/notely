@@ -11,11 +11,11 @@ class ProfileListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10.0),
+      padding:  EdgeInsets.all(10.0),
       child: Row(
         children: [
           iconAndTextBox(icon, text),
-          Spacer(),
+           Spacer(),
           Transform.scale(
               scaleX: -1, child: Image.asset('assets/Arrow-left-1.png'))
         ],
@@ -27,7 +27,7 @@ class ProfileListItem extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
       child: Container(
-        padding: EdgeInsets.all(6.0),
+        padding:  EdgeInsets.all(6.0),
         height: 40,
         width: 40,
         decoration: const BoxDecoration(color: Colors.white),
@@ -43,7 +43,7 @@ class ProfileListItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         iconBox(icon),
-        SizedBox(
+        const SizedBox(
           width: 12,
         ),
         Padding(

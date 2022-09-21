@@ -13,7 +13,7 @@ class CheckedText extends StatelessWidget {
       child: Row(
         children: [
           Image.asset('assets/Vector.png'),
-          SizedBox(
+          const SizedBox(
             width: 12,
           ),
           Text(

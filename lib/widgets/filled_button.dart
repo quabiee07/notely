@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:notely/utils/color.dart';
 import 'package:notely/utils/constants.dart';
 
@@ -16,7 +14,7 @@ class CustomButton extends StatelessWidget {
         onTap: pressed,
         child: Container(
           height: 65,
-          padding: EdgeInsets.all(24.0),
+          padding:  EdgeInsets.all(24.0),
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),

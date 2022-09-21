@@ -4,6 +4,7 @@ import 'package:notely/widgets/profile_list_item.dart';
 
 import '../utils/constants.dart';
 
+// ignore: must_be_immutable
 class ProfilePage extends StatelessWidget {
   ProfilePage({Key? key}) : super(key: key);
 
@@ -68,7 +69,7 @@ class ProfilePage extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 const ProfileListItem(
